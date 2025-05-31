@@ -1,0 +1,11 @@
+---
+type Props = {
+  textWhite?: boolean
+}
+
+const {textWhite} = Astro.props
+
+---
+<h1 class={"font-bangers text-primary-dark font-extrabold text-font-3 " +  (textWhite && "text-primary-light")}>
+  <a class="" href="/">Creati<span class="bg-primary-dark px-2xs border-special-1 text-primary-yellow ml-xs">Vista</span></a>
+</h1>

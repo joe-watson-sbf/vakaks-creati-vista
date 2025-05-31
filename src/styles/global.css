@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --primary: oklch(0.5004 0.2298 270.49);
+  --primary-foreground: oklch(0.9823 0.1275 288.17);
+  --secondary: oklch(0.4128 0.2103 292.04);
+  --accent: oklch(0.864 0.1695 88.95);
+  --background: oklch(0.9827 0.0067 340.4);
+  --foreground: oklch(0.2022 0 0);
+  --muted: oklch(0.3122 0 0);
+
+  --radius: 0.5rem;
+}
+
+[data-theme="dark"] {
+  --primary: oklch(0.5004 0.2298 270.49);
+  --primary-foreground: oklch(0.9823 0.1275 288.17);
+  --secondary: oklch(0.4128 0.2103 292.04);
+  --accent: oklch(0.864 0.1695 88.95);
+  --background: oklch(0.9827 0.0067 340.4);
+  --foreground: oklch(0.2022 0 0);
+  --muted: oklch(0.3122 0 0);
+}
+
+
+@theme {
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+
+  --prose-boby: var(--foreground);
+  --prose-headings: var(--primary);
+  --prose-links: var(--accent);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --grid-template-columns-responsive-xs: repeat(auto-fill, minmax(12rem, 1fr));
+  --grid-template-columns-responsive-sm: repeat(auto-fill, minmax(15rem, 1fr));
+  --grid-template-columns-responsive-md: repeat(auto-fill, minmax(17rem, 1fr));
+  --grid-template-columns-responsive-lg: repeat(auto-fill, minmax(20rem, 1fr));
+  --grid-template-columns-responsive-xl: repeat(auto-fill, minmax(25rem, 1fr));
+
+}
+
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-size: clamp(0.875rem, 0.875rem + 0.5vw, 1rem);
+  }
+
+  a,
+  button {
+    @apply cursor-pointer;
+  }
+}
+

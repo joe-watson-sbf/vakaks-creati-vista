@@ -1,22 +1,78 @@
+---
+import { metaData } from "./meta";
+ import './src/styles/global.css'
+import { ClientRouter, fade } from "astro:transitions";
+
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title = "CreatiVista", description }: Props = Astro.props;
+
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='author' content='VAKAKS' />
+    <meta name='publisher' content='VAKAKS' />
+    <meta name='theme-color' content='#000000' />
+    <meta name='application-name' content='CreatiVista' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+
+    <meta name='description' content={description || metaData.description} />
+    <meta name='og:description' content={description || metaData.description} />
+    <meta name='keywords' content={metaData.keywords} />
+
+    <meta name='robots' content='index, follow' />
+    <meta name='revisit-after' content='30 days' />
+    <meta name='rating' content='general' />
+    <meta name='distribution' content='global' />
+    <meta name='language' content='English' />
+    <meta name='canonical' content='https://creativista.vakaks.com/' />
+    <meta name='og:title' content='CreatiVista' />
+    <meta name='og:type' content='website' />
+    <meta name='og:url' content='https://creativista.vakaks.com' />
+    <meta name='og:site_name' content='CreatiVista' />
+    <meta name='generator' content={Astro.generator} />
+    <ClientRouter />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header></header>
+    <main
+      class='antialiased scroll-smooth'
+      transition:animate={fade({ duration: 2 })}
+    >
+      <slot />
+    </main>
+    <footer></footer>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+  }
 </style>
