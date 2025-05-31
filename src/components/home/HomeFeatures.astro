@@ -1,0 +1,30 @@
+---
+import { features } from "@/helpers";
+import FeatureCard from "../features/FeatureCard.astro";
+---
+
+<section id='generators' class='py-20 px-6 max-w-7xl mx-auto space-y-8'>
+  <hr class="max-w-lg w-full"/>
+  <h2 class='text-3xl md:text-4xl font-extrabold text-foreground'>
+    Powerful Code Generators
+  </h2>
+  <hr class="max-w-sm w-full"/>
+
+  <div class='grid grid-cols-responsive-lg gap-8'>
+
+    {
+        features.map((feature) => (
+            <FeatureCard
+              title={feature.title}
+              description={feature.description}
+              link={feature.link}
+            >
+              <Fragment 
+                set:html={feature.previewHtml}
+              />
+            </FeatureCard>
+        ))
+    }
+
+  </div>
+</section>

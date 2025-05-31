@@ -1,0 +1,26 @@
+---
+import { cn } from '@/lib/utils';
+
+
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  class?: string;
+}
+
+const { title, description, icon, class: className } = Astro.props;
+
+---
+
+<div class={cn('p-6 border-special-1 text-foreground rounded-xl border shadow-sm space-y-2 w-full', className)}>
+  <div class='text-5xl font-bold font-bangers'>
+    {icon}
+  </div>
+  <h3 class='text-xl font-semibold'>
+    {title}
+  </h3>
+  <p class='opacity-80'>
+    {description}
+  </p>
+</div>

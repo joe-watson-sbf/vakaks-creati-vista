@@ -1,0 +1,36 @@
+---
+import { ChevronRight } from 'lucide-astro';
+
+type Props = {
+  title: string;
+  description: string;
+  link: string;
+};
+
+const { title, description, link }: Props = Astro.props;
+
+---
+
+
+
+<div
+  class='bg-white hover:shadow-2xl space-y-2 shadow-primary/20 shadow-xs transition-shadow duration-300 p-6 flex flex-col'
+>
+  <h3 class=' text-xl font-semibold text-foreground'>
+    {title}
+  </h3>
+  <p class='text-muted text-sm flex-grow'>
+    {description}
+  </p>
+  <div
+    class='w-full mt-3 h-full bg-background mb-4 flex items-center justify-center border border-dashed border-gray-400'
+  >
+    <slot/>
+  </div>
+  <a
+    href={link}
+    class='block text-center hover:text-primary hover:border-primary text-foreground border border-foreground font-bold py-2 px-4 transition duration-300'
+  >
+    Generate <ChevronRight class='inline ml-1' />
+  </a>
+</div>

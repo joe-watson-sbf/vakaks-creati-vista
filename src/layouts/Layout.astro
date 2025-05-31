@@ -1,8 +1,12 @@
 ---
+import "@fontsource/bangers";
+// Supports weights 300-800
+import "@fontsource-variable/open-sans";
+import "@/styles/global.css";
+import Header from "./Header.astro";
 import { metaData } from "./meta";
- import './src/styles/global.css'
 import { ClientRouter, fade } from "astro:transitions";
-
+import Footer from './Footer.astro';
 
 type Props = {
   title?: string;
@@ -10,7 +14,6 @@ type Props = {
 };
 
 const { title = "CreatiVista", description }: Props = Astro.props;
-
 ---
 
 <!doctype html>
@@ -44,18 +47,22 @@ const { title = "CreatiVista", description }: Props = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header></header>
+    <Header />
     <main
-      class='antialiased scroll-smooth'
+      class='antialiased scroll-smooth relative z-10'
       transition:animate={fade({ duration: 2 })}
     >
       <slot />
     </main>
-    <footer></footer>
+    <Footer/>
   </body>
 </html>
 
 <style is:global>
+  :root {
+    --font-bangers: "Bangers", system-ui;
+    --font-open-sans: "Open Sans Variable", sans-serif;
+  }
   html,
   body {
     margin: 0;
@@ -64,8 +71,7 @@ const { title = "CreatiVista", description }: Props = Astro.props;
     position: relative;
     width: 100%;
     height: 100%;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-family: var(--font-open-sans);
     scroll-behavior: smooth;
   }
 

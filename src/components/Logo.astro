@@ -1,11 +1,11 @@
 ---
+import { cn } from '@/lib/utils'
 type Props = {
-  textWhite?: boolean
-}
-
-const {textWhite} = Astro.props
+  class?: string;
+};
+const { class: className }: Props = Astro.props;
 
 ---
-<h1 class={"font-bangers text-primary-dark font-extrabold text-font-3 " +  (textWhite && "text-primary-light")}>
-  <a class="" href="/">Creati<span class="bg-primary-dark px-2xs border-special-1 text-primary-yellow ml-xs">Vista</span></a>
+<h1 class={cn("font-bangers tracking-wide text-primary-foreground font-extrabold text-3xl", className)}>
+  <a class="" href="/">Creati<span class="bg-foreground px-1 border-special-1 text-accent ml-2">Vista</span></a>
 </h1>

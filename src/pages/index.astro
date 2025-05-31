@@ -1,13 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import HomeFeatures from "@/components/home/HomeFeatures.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "@/components/home/Hero.astro";
+import Steps from "@/components/home/Steps.astro";
 ---
 
 <Layout>
-	<div>
-		<h1>Welcome to CreatiVista</h1>
-		<p>Your creative journey starts here.</p>
-		<p>Explore our features and unleash your creativity!</p>
-		<p>Stay tuned for more updates.</p>
-	</div>
+  <div class='px-6 mx-auto'>
+    <Hero />
+  </div>
+
+  <HomeFeatures />
+
+  <Steps />
+
+  <section
+    class='bg-primary max-w-7xl mx-auto text-white py-16 px-6 text-center border-special-1 shadow-lg'
+  >
+    <h2 class='text-3xl md:text-4xl font-extrabold mb-6'>
+      Ready to Streamline Your Workflow?
+    </h2>
+    <p class='text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto'>
+      Stop writing boilerplate and start building amazing user interfaces faster
+      with CreatiVista.
+    </p>
+    <a
+      href='#generators'
+      class='inline-block border-special-1 bg-white text-primary font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105'
+    >
+      Explore All Generators
+    </a>
+  </section>
 </Layout>

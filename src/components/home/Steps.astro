@@ -1,0 +1,42 @@
+---
+import Step from '../ui/Step.astro';
+---
+
+<section class='py-16 px-6 max-w-7xl mx-auto space-y-8'>
+
+  <hr class="max-w-lg w-full ml-auto"/>
+  <h2 class='text-3xl md:text-4xl text-right font-extrabold text-foreground'>
+    How CreatiVista Works
+  </h2>
+  <hr class="max-w-sm w-full ml-auto"/>
+
+  <h2
+    class='text-3xl md:text-4xl font-extrabold text-center text-foreground mb-12'
+  >
+   
+  </h2>
+  <div class='grid grid-cols-1 md:grid-cols-3 gap-8 text-center'>
+
+    <Step
+      icon='1'
+      title='Select Your Tool'
+      description='Choose from our growing suite of powerful code generators.'
+      icon='1'
+      class='bg-primary text-white'
+    />
+    <Step
+      icon='2'
+      title='Configure & Preview'
+      description='Adjust parameters with real-time visual feedback.'
+      icon='2'
+      class='bg-secondary text-white'
+    />
+    <Step
+      icon='3'
+      title='Copy & Implement'
+      description='Instantly copy clean, production-ready code for your projects.'
+      icon='3'
+      class='bg-accent text-foreground'
+    />
+  </div>
+</section>
