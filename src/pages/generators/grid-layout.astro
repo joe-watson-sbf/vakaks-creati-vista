@@ -1,0 +1,22 @@
+---
+import GridLayoutGenerator from '@/components/features/GridLayoutGenerator';
+import PageHeader from '@/components/ui/PageHeader.astro';
+import Layout from '@/layouts/Layout.astro';
+
+
+---
+<Layout
+  title="Grid Layout Generator"
+  description="Create responsive grid layouts with ease using our Grid Layout Generator. Customize columns, rows, and gaps to fit your design needs."
+  keywords="grid layout, responsive design, CSS grid generator, web design tools"
+>
+<section class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+  <PageHeader
+    description='Start building responsive grid layouts effortlessly with our intuitive generator.'
+  >
+    Grid Layout Generator
+  </PageHeader>
+  <GridLayoutGenerator client:only="react"/>
+</section>
+
+</Layout>

@@ -9,17 +9,17 @@ export const features: Feature[] = [
   {
     title: "Dynamic Shadow Generator",
     description: "Effortlessly add depth and visual appeal to your elements. Adjust offset, blur, spread, color, and opacity in real-time.",
-    link: "#shadow",
+    link: "/generators/shadow",
     previewHtml: `
-      <div class="w-full min-h-32 h-full bg-white  flex items-center justify-center">
-          <div class="w-36 h-20 bg-white  shadow-xl" style="box-shadow: 0px 12px 25px -8px oklch(0.2022 0 0 / 0.4);"></div>
+      <div class="w-full min-h-32 bg-white h-full flex items-center justify-center">
+          <div class="w-36 h-20 bg-white border border-muted/10 shadow-xl shadow-primary/20"></div>
       </div>
     `,
   },
   {
     title: "Flexible Grid Layout Creator",
     description: "Design complex CSS Grid layouts with ease. Define rows, columns, and gaps visually, then copy the code.",
-    link: "#grid-layout",
+    link: "/generators/grid-layout",
     previewHtml: `
       <div class="w-full min-h-32 h-full bg-background  p-2">
           <div class="grid grid-cols-3 gap-2 w-full h-full">
@@ -34,23 +34,9 @@ export const features: Feature[] = [
     `,
   },
   {
-    title: "Responsive Grids (No Media Queries)",
-    description: "Create truly adaptive layouts using modern CSS Grid and Flexbox techniques, eliminating the need for manual media queries.",
-    link: "#responsive-grid",
-    previewHtml: `
-      <div class="w-full min-h-32 h-full bg-background  p-2">
-          <div class="flex flex-wrap gap-2 w-full h-full">
-              <div class="flex-1 min-w-[70px] bg-secondary h-full"></div>
-              <div class="flex-1 min-w-[70px] bg-secondary h-full"></div>
-              <div class="flex-1 min-w-[70px] bg-secondary h-full"></div>
-          </div>
-      </div>
-    `,
-  },
-  {
     title: "CSS Gradient Generator",
     description: "Craft beautiful linear, radial, and conic gradients with multiple color stops and directions.",
-    link: "#gradient",
+    link: "/generators/gradient",
     previewHtml: `
       <div class="w-full min-h-32 h-full " style="background: linear-gradient(to right, oklch(0.5004 0.2298 270.49), oklch(0.4128 0.2103 292.04));"></div>
     `,
@@ -58,10 +44,24 @@ export const features: Feature[] = [
   {
     title: "Border Radius Customizer",
     description: "Fine-tune individual border radii for unique and custom shapes.",
-    link: "#border-radius",
+    link: "/generators/border-radius",
     previewHtml: `
       <div class="w-full min-h-32 h-full bg-background  flex items-center justify-center">
-          <div class="w-24 h-24 bg-accent rounded-2xl" style="border-radius: 30px 5px 50px 10px;"></div>
+          <div class="w-24 h-24 bg-primary rounded-2xl" style="border-radius: 30px 5px 50px 10px;"></div>
+      </div>
+    `,
+  },
+   {
+    title: "Responsive Grids (No Media Queries)",
+    description: "Create truly adaptive layouts using modern CSS Grid and Flexbox techniques, eliminating the need for manual media queries.",
+    link: "#responsive-grid",
+    previewHtml: `
+      <div class="w-full min-h-32 h-full bg-background  p-2">
+          <div class="flex flex-wrap gap-2 w-full h-full">
+              <div class="flex-1 min-w-[70px] bg-primary h-full"></div>
+              <div class="flex-1 min-w-[70px] bg-primary h-full"></div>
+              <div class="flex-1 min-w-[70px] bg-primary h-full"></div>
+          </div>
       </div>
     `,
   },

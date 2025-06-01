@@ -1,0 +1,40 @@
+---
+import { cn } from '@/lib/utils';
+import { ChevronLeft } from 'lucide-astro';
+
+interface Props {
+  class?: string;
+  description?: string;
+  postion?: "left" | "center" | "right";
+  hideBorder?: boolean;
+  activeBackHome?: boolean;
+}
+const { class: classString = "", activeBackHome, description, postion="left", hideBorder=false }: Props = Astro.props;
+
+const className = cn(
+  'text-left',
+  postion === "left" ? 'text-left' : postion === "right" ? 'text-right ml-auto' : 'text-center mx-auto',
+  classString
+);
+
+const barClassPosition = postion === "left" ? 'ml-0' : postion === "right" ? 'ml-auto' : 'mx-auto';
+---
+
+<div class={cn('space-y-8 max-w-4xl', className)}>
+  {!hideBorder && <hr class={cn('max-w-lg w-full', barClassPosition)} />}
+
+  <h2 class={cn('text-2xl sm:text-4xl m-0 flex w-fit items-center font-extrabold text-foreground', className)}>
+    {activeBackHome && <a href="/generators" data-astro-prefetch>
+      <ChevronLeft class='size-7' />
+    </a>}
+    <slot />
+  </h2>
+
+  
+  {description && <p class={cn('text-lg text-muted', 
+    activeBackHome && 'pl-2',
+  )}>{description}</p>}
+
+
+  {!hideBorder &&  <hr class={cn('max-w-sm w-full', barClassPosition)} />}
+</div>

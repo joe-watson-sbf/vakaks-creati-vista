@@ -1,0 +1,21 @@
+---
+import PageHeader from '@/components/ui/PageHeader.astro';
+import Layout from '@/layouts/Layout.astro';
+import GradientGenerator from '@/components/features/GradientGenerator';
+
+---
+<Layout
+  title="CSS Gradient Generator"
+  description="Create beautiful CSS gradients for your web projects with our easy-to-use Gradient Generator. Customize colors, angles, and more."
+  keywords="gradient generator, CSS gradients, web design tools, dynamic gradients, UI design"
+>
+<section class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+  <PageHeader
+    description="With one of the most powerful CSS gradient generators, you can create stunning gradients for your web projects. Customize colors, angles, and more to achieve the perfect look."
+  >
+    Dynamic Gradient Generator
+  </PageHeader>
+  <GradientGenerator client:only="react"/>
+</section>
+
+</Layout>

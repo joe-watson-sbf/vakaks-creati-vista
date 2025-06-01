@@ -1,0 +1,53 @@
+---
+import FeatureCard from "@/components/home/FeatureCard.astro";
+import PageHeader from "@/components/ui/PageHeader.astro";
+import { features } from "@/helpers";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title='Powerful Code Generators'
+  description='Start building responsive grid layouts effortlessly with our intuitive generator.'
+  keywords='Shadow generator, CSS shadow, box shadow generator, web design tools, responsive design, grid layout generator'
+>
+  <section id="#generators" class='max-w-7xl mx-auto px-4 py-8 space-y-8'>
+    <PageHeader
+      description='Generate clean, responsive code for your web projects with our powerful tools.'
+    >
+      Powerful Code Generators
+    </PageHeader>
+
+    <div class='grid grid-cols-responsive-lg gap-8'>
+      {
+        features.map((feature) => (
+          <FeatureCard
+            title={feature.title}
+            description={feature.description}
+            link={feature.link}
+          >
+            <Fragment set:html={feature.previewHtml} />
+          </FeatureCard>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class='bg-primary max-w-7xl mt-16 mx-auto text-white py-16 px-6 text-center border-special-1 shadow-lg'
+  >
+    <h2 class='text-3xl md:text-4xl font-extrabold mb-6'>
+      Ready to Streamline Your Workflow?
+    </h2>
+    <p class='text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto'>
+      Stop writing boilerplate and start building amazing user interfaces faster
+      with CreatiVista.
+    </p>
+    <a
+      href='#generators'
+      class='inline-block border-special-1 bg-white text-primary font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105'
+    >
+      Explore All Generators
+    </a>
+  </section>
+
+</Layout>

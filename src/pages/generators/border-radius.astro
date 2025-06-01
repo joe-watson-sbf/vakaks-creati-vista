@@ -1,0 +1,20 @@
+---
+import BorderRadiusCustomizer from "@/components/features/BorderRadiusCustomizer";
+import PageHeader from "@/components/ui/PageHeader.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title='Border Radius Customizer'
+  description='Easily customize border radius for your web elements with our Border Radius Customizer. Adjust values to create rounded corners and enhance your design.'
+  keywords='border radius customizer, CSS border radius, web design tools, rounded corners, UI design'
+>
+  <section class='max-w-7xl mx-auto px-4 py-8 space-y-8'>
+    <PageHeader
+      description='Use our Border Radius Customizer to create beautiful, rounded corners for your web elements. Adjust the radius values to achieve the perfect look for your design.'
+    >
+      Border Radius Customizer
+    </PageHeader>
+    <BorderRadiusCustomizer client:only='react' />
+  </section>
+</Layout>

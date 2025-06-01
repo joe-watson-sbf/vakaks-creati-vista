@@ -1,0 +1,22 @@
+---
+import ShadowGenerator from '@/components/features/ShadowGenerator';
+import PageHeader from '@/components/ui/PageHeader.astro';
+import Layout from '@/layouts/Layout.astro';
+
+
+---
+<Layout
+  title="Dynamic Shadow Generator"
+  description="Create stunning shadows for your web elements with our Dynamic Shadow Generator. Customize shadow properties to enhance your design."
+  keywords="shadow generator, CSS shadows, web design tools, dynamic shadows, UI design"
+>
+<section class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+  <PageHeader
+    description="Use our Dynamic Shadow Generator to create beautiful, customizable shadows for your web elements. Adjust parameters like color, blur, and spread to achieve the perfect shadow effect."
+  >
+    Dynamic Shadow Generator
+  </PageHeader>
+  <ShadowGenerator client:only="react"/>
+</section>
+
+</Layout>

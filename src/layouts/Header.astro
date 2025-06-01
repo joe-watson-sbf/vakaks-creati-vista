@@ -1,15 +1,18 @@
 ---
 import Logo from "@/components/Logo.astro";
-import { Coffee } from 'lucide-astro';
+import { Coffee, Menu } from "lucide-astro";
 ---
 
 <header
-  class='flex items-center max-w-7xl w-full mx-auto gap-8 justify-between p-4'
+  class='flex items-center max-w-7xl w-full mx-auto gap-8 justify-between p-4 relative'
 >
   <Logo class='text-foreground text-4xl' />
 
-  <nav class='flex items-center flex-wrap gap-6'>
-    <a href='/' class='text-lg font-semibold hover:text-primary transition-colors'>Home</a>
+  <nav class='hidden sm:flex items-center flex-wrap gap-6'>
+    <a
+      href='/'
+      class='text-lg font-semibold hover:text-primary transition-colors'>Home</a
+    >
     <a
       class='border-foreground py-1 hover:text-primary hover:border-primary border-special-1 border text-primary-dark px-6 font-bold transition-all'
       href='https://github.com/joe-watson-sbf/vakaks-creati-vista'
@@ -18,12 +21,39 @@ import { Coffee } from 'lucide-astro';
       Github
     </a>
     <a
-      href="https://www.paypal.com/donate/?hosted_button_id=SFUXZFWDMA3WU"
+      href='https://www.paypal.com/donate/?hosted_button_id=SFUXZFWDMA3WU'
       class='border-special-1 border hover:text-primary text-foreground py-1 px-2 flex items-center gap-2 font-semibold transition-colors'
-      target="_blank"
+      target='_blank'
     >
-      <Coffee class=' size-5' />
+      <Coffee class='size-5' />
       Buy Me a Coffee
     </a>
   </nav>
+
+  <div class='sm:hidden group'>
+    <Menu class='size-10 text-foreground bg-background relative z-50 cursor-pointer' />
+
+    <nav class='hidden whitespace-nowrap group-hover:flex flex-col z-40 flex-wrap gap-6 absolute top-2 right-2 w-fit bg-background p-8 border border-muted rounded-lg shadow-lg'>
+      <a
+        href='/'
+        class='text-lg font-semibold hover:text-primary transition-colors'
+        >Home</a
+      >
+      <a
+        class='border-foreground py-1 hover:text-primary hover:border-primary border-special-1 border text-primary-dark px-6 font-bold transition-all'
+        href='https://github.com/joe-watson-sbf/vakaks-creati-vista'
+        target='_blank'
+      >
+        Github
+      </a>
+      <a
+        href='https://www.paypal.com/donate/?hosted_button_id=SFUXZFWDMA3WU'
+        class='border-special-1 whitespace-nowrap border hover:text-primary text-foreground py-1 px-2 flex items-center gap-2 font-semibold transition-colors'
+        target='_blank'
+      >
+        <Coffee class='size-5' />
+        Buy Me a Coffee
+      </a>
+    </nav>
+  </div>
 </header>

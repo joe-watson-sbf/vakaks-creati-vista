@@ -11,13 +11,14 @@ import Footer from './Footer.astro';
 type Props = {
   title?: string;
   description?: string;
+  keywords?: string;
 };
 
-const { title = "CreatiVista", description }: Props = Astro.props;
+const { title = "CreatiVista", keywords, description }: Props = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='en'  transition:name='root' transition:animate='none'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -30,7 +31,7 @@ const { title = "CreatiVista", description }: Props = Astro.props;
 
     <meta name='description' content={description || metaData.description} />
     <meta name='og:description' content={description || metaData.description} />
-    <meta name='keywords' content={metaData.keywords} />
+    <meta name='keywords' content={keywords || metaData.keywords} />
 
     <meta name='robots' content='index, follow' />
     <meta name='revisit-after' content='30 days' />
@@ -50,7 +51,7 @@ const { title = "CreatiVista", description }: Props = Astro.props;
     <Header />
     <main
       class='antialiased scroll-smooth relative z-10'
-      transition:animate={fade({ duration: 2 })}
+      transition:animate={fade({ duration: '0.5s' })}
     >
       <slot />
     </main>
